@@ -1,27 +1,67 @@
-# AngularJwtAuth
+# Angular 10 + Nodejs JWT Token Based Authentication with MySQL Example
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+Tutorial Link: [Angular 10 + Nodejs JWT Token Based Authentication with MySQL Example](https://loizenai.com/angular-10-nodejs-jwt-authentication-mysql-examples-tutorials/#sourcecode)
 
-## Development server
+![Angular 10 + Nodejs JWT Token Based Authentication with MySQL Example](https://loizenai.com/wp-content/uploads/2020/06/Angular-10-Nodejs-Security-JWT-Authentication-MySQL-Example.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+“How to implement Angular 10 + Nodejs JWT Token Based Authentication with MySQL Example?” is always a big common question in development world? So in the tutorial, I guide you very clearly how to build a full stack example to demonstrate an JWT Authentication flow from Angular (signup & signin with by JWT Token) to backend: Nodejs and database MySQL.
 
-## Code scaffolding
+## ANGULAR FRONT-END WITH INTERCEPTOR
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![ANGULAR FRONT-END WITH INTERCEPTOR](https://loizenai.com/wp-content/uploads/2020/06/Angular-Nodejs-Jwt-Authentication-Architecture-Diagram-Front-End-Client.png)
 
-## Build
+– app.component is the parent component that contains routerLink and router-outlet for routing. It also has an authority variable as the condition for displaying items on navigation bar.
+– user.component, pm.component, admin.component correspond to Angular Components for User Board, PM Board, Admin Board. Each Board uses user.service to access authority data.
+– register.component contains User Registration form, submission of the form will call auth.service.
+– login.component contains User Login form, submission of the form will call auth.service and token-storage.service.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+– user.service gets access to authority data from Server using Angular HttpClient ($http service).
+– auth.service handles authentication and signup actions with Server using Angular HttpClient ($http service).
+– every HTTP request by $http service will be inspected and transformed before being sent to the Server by auth-interceptor (implements HttpInterceptor).
+– auth-interceptor check and get Token from token-storage.service to add the Token to HTTP Request Header.
 
-## Running unit tests
+– token-storage.service manages Token inside Browser’s sessionStorage.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[![Video Guide – Angular 10 + Nodejs JWT Token based Authentication with MySQL Example](https://img.youtube.com/vi/rYmf_MthobU/0.jpg)](https://www.youtube.com/watch?v=rYmf_MthobU)
 
-## Running end-to-end tests
+## JWT Authentication with Nodejs/Express RestAPIs
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![JWT Authentication with Nodejs/Express RestAPIs](https://loizenai.com/wp-content/uploads/2020/06/Angular-Nodejs-Jwt-Authentication-Architecture-Diagram-Back-End-Server.png)
 
-## Further help
+## Overview Nodejs server for JWT Authentication
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![Overview Nodejs server for JWT Authentication](https://loizenai.com/wp-content/uploads/2020/06/Angular-Nodejs-Security-Jwt-Authentication-Work-Process-Diagram.png)
+
+– SignUp /api/auth/signup:
+
+![Nodejs JWT Authentication SignUp – Jack user with PM role](https://loizenai.com/wp-content/uploads/2020/06/Nodejs-JWT-Authentication-SignUp-Jack-user-with-PM-role.png)
+
+– Sign In /api/auth/signin:
+
+![SignIn Jack User](https://loizenai.com/wp-content/uploads/2020/06/SignIn-Jack-User.png)
+
+– Access User Page /api/test/user:
+
+![Access to protected page](https://loizenai.com/wp-content/uploads/2020/06/Access-to-protected-page.png)
+
+– Access PM Page /api/test/pm:
+
+![Access to PM page](https://loizenai.com/wp-content/uploads/2020/06/Access-to-PM-page.png)
+
+– Access to Admin page /api/test/admin:
+
+![Jack can NOT access Admin Page](https://loizenai.com/wp-content/uploads/2020/06/Jack-can-NOT-access-Admin-Page-1.png)
+
+## Nodejs Project structure:
+
+![Nodejs Project structure](https://loizenai.com/wp-content/uploads/2020/06/Nodejs-JWT-authentication-project-structure.png)
+
+## Angular project structure
+
+![Angular Project Structure](https://loizenai.com/wp-content/uploads/2020/05/Angular-Project-Structure.png)
+
+### Related posts
+
+- [Nodejs Token Based Authentication Example](https://loizenai.com/nodejs-jwt-authentication-example-with-mysql-postgresql-database/)
+- [SpringBoot JWT Token Based Authentication Example](https://loizenai.com/spring-boot-security-jwt-authentication-example-mysql-postgresql-spring-jpa-restapis/)
+- [Angular 10 SpringBoot Token Based Authentication Example](https://loizenai.com/angular-10-spring-boot-jwt-token-based-authentication-example-spring-security-mysql-database/)
